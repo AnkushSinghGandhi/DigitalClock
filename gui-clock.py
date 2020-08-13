@@ -10,6 +10,10 @@ def clock():
     H=str(time.strftime("%H"))
     M=str(time.strftime("%M"))
     S=str(time.strftime("%S"))
+    if int(H)>12 and int(M)>0:
+        lbl_am.config(text='PM')
+    if int(H)>12:
+        H=str(int(H)-12)
 
     lbl_hr.config(text=H)
     lbl_mn.config(text=M)
